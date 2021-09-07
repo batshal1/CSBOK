@@ -28,6 +28,7 @@ class Topic(models.Model):
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     video_link = models.TextField(blank=True)
+    abstract = models.TextField(blank=False)
 
     @property
     def short_body(self):
