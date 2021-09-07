@@ -9,7 +9,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ['category','title','author','short_body','media',
-                    'references','created','updated','slug']
+    list_display = ['title','category',]
     list_filter = ['category']
     prepopulated_fields = {'slug':('title',)}

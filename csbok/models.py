@@ -27,6 +27,7 @@ class Topic(models.Model):
     slug = models.SlugField( max_length=256, unique=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
+    video_link = models.TextField(blank=True)
 
     @property
     def short_body(self):
