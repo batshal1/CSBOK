@@ -39,7 +39,7 @@
                 </div>
             </div>
             {% autoescape on %}
-            <p>{{ topic.body|linebreaksbr}}</p>
+            <p>{{ topic.body|safe}}</p>
             {% endautoescape %}
             
         </div>

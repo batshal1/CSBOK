@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import truncatechars
 from django.urls import reverse
+from tinymce import models as tinymce_models
+import tinymce
+
 
 class Category(models.Model):
     name = models.CharField( max_length=256, db_index=True)
@@ -21,7 +24,7 @@ class Topic(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_creator')
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='B.Bhattarai')
-    body = models.TextField(blank=False)
+    body = tinymce_models.HTMLField()
     media = models.ImageField(upload_to='image/')
     references = models.TextField(blank=False)
     slug = models.SlugField( max_length=256, unique=True)
